@@ -1,0 +1,214 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+}
+
+nav {
+    background: #0544f1;
+    padding: 10px 0px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav h2 {
+    font-size: 18px;
+    margin: 10px;
+    color: white;
+}
+
+.sidebar {
+    width: 230px;
+    height: 100vh;
+    background: #0544f1;
+    color: #fff;
+    position: fixed;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.sidebar a {
+    display: block;
+    font-weight: 900;
+    color: white;
+    text-decoration: none;
+    padding: 8px 0;
+}
+
+.sidebar a:hover {
+    color: red;
+}
+
+.sidebar.active {
+    margin-left: -25px;
+}
+
+
+.content {
+    margin-left: 260px;
+    padding: 20px;
+}
+
+.content h2 {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.deskripsi {
+    background: #0ea5e9;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 60px;
+    width: 380px;
+    border-radius: 20px;
+}
+
+.deskripsi h1 {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.deskripsi h3 {
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.deskripsi p {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.card-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.total-dokumen {
+    background: #0ea5e9;
+    color: white;
+    width: 360px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.total-download {
+    background: #22c55e;
+    color: white;
+    width: 360px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.stat-card {
+    background: #3a04ec;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: auto;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.stat-card:hover {
+    transform: scale(1.0) translateY(-5px);
+}
+
+.form-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px blue;
+    margin-bottom: 30px;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-box button {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-back {
+    background: #f59e0b;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.table-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th {
+    background: #0ea5e9;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+}
+
+table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.btn-edit {
+    background: #16a34a;
+    color: #fff;
+    padding: 5px 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-delete {
+    background: #dc2626;
+    color: #fff;
+    padding: 5px 5px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.btn-download {
+    background: #2563eb;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.content.full {
+    margin-left: 20px !important;
+    transition: 0.3s;
+}
+
+.sidebar {
+    transition: 0.3s;
+}
+
+.sidebar.active {
+    margin-left: -250px;
+}

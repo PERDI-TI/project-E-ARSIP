@@ -1,0 +1,49 @@
+body {
+    background: blue;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: white;
+    width: 320px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px black;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    margin-top: 10px;
+    display: block;
+}
+
+input {
+    width: 250px;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+button {
+    margin-top: 15px;
+    width: 150px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: blue;
+}
+
+button:hover {
+    background: red;
+}
+.card a{
+    text-decoration: none;
+}
