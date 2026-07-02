@@ -21,6 +21,8 @@ ORDER BY created_at DESC");
 <head>
     <title>Arsip <?= $kategori ?></title>
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="assets/script.js" defer></script>
     <script src="assets/script.js" defer></script>
 </head>
 
@@ -30,14 +32,30 @@ ORDER BY created_at DESC");
     <nav>
         <h2>E-ARSIP TEKNOLOGI INFORMASI 2024</h2>
         <div class="sidebar" id="sidebar" onclick="toggleSidebar()">
-            <a href="dashboard.php">Dashboard</a>
-            <a href="view.php?kategori=Pribadi">Arsip Pribadi</a>
-            <a href="view.php?kategori=Akademik">Arsip Akademik</a>
-            <a href="view.php?kategori=Tugas">Arsip Tugas</a>
-            <a href="view.php?kategori=Sertifikat">Arsip Sertifikat</a>
-            <a href="view.php?kategori=Administrasi">Arsip Administrasi</a>
-            <a href="view.php?kategori=Tugas Akhir">Arsip Tugas Akhir</a>
-            <a href="auth/logout.php">Logout</a>
+            <div class="sidebar1">
+            <a href="dashboard.php">
+                <i class="fa-solid fa-house"></i> Dashboard
+        </a>
+            <a href="view.php?kategori=Pribadi">
+                <i class="fa-solid fa-file-lines"></i>  Arsip Pribadi
+        </a>
+            <a href="view.php?kategori=Akademik">
+                <i class="fa-solid fa-file-lines"></i>  Arsip Akademik
+            </a>
+            <a href="view.php?kategori=Tugas">
+                <i class="fa-solid fa-file-lines"></i>  Arsip Tugas
+            </a>
+            <a href="view.php?kategori=Sertifikat">
+              <i class="fa-solid fa-file-lines"></i> Arsip Sertifikat 
+        </a>
+            <a href="view.php?kategori=Administrasi">
+                <i class="fa-solid fa-file-lines"></i>  Arsip Administrasi
+        </a>
+            <a href="view.php?kategori=Tugas Akhir">
+                <i class="fa-solid fa-file-lines"></i>  Arsip Tugas Akhir
+        </a>
+            <a href="auth/logout.php"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </div>
         </div>
     </nav>
 
@@ -49,8 +67,6 @@ ORDER BY created_at DESC");
             <h3>Form Tambah Arsip</h3>
             <form action="upload.php" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="kategori" value="<?= $kategori ?>">
-
-
                 <label>Tanggal</label>
                 <input type="date" name="tanggal" required>
 
@@ -60,18 +76,20 @@ ORDER BY created_at DESC");
                 <button name="upload">Simpan</button>
                 <a href="dashboard.php" class="btn-back">Kembali</a>
             </form>
+            <label>Pencarian Dokumen:</label>
+            <input type="text" id="search" placeholder="Cari nama file atau tanggal..." onkeyup="cariFile()">
         </div>
 
         <div class="table-box">
             <h3>Data Arsip</h3>
-            <table>
+            <table id="tableArsip">
                 <tr>
                     <th>No</th>
                     <th>Tanggal</th>
                     <th>Nama File</th>
-                    <th>lokasi file</th>
                     <th>Aksi</th>
                 </tr>
+                
 
                 <?php
                 $no = 1;
@@ -82,12 +100,9 @@ ORDER BY created_at DESC");
                         <td><?= date("d-m-Y", strtotime($d['created_at'])) ?></td>
                         <td><?= $d['nama_file'] ?></td>
                         <td>
-                            <a class="btn-delete" href="uploads/<?= $d['nama_file'] ?>" target="_blank">Lihat</a>
-                            <a class="btn-download" href="download.php?id=<?= $d['id'] ?>">Download</a>
-                        </td>
-                        <td>
-                            <a class="btn-edit">Edit</a>
-                            <a class="btn-delete" href="delete.php?id=<?= $d['id'] ?>&kategori=<?= $kategori ?>">Hapus</a>
+                            <a class="btn-download" href="uploads/<?= $d['nama_file'] ?>" target="_blank"><i class="fa-solid fa-eye"></i></a>
+                            <a class="btn-download" href="download.php?id=<?= $d['id'] ?>"><i class="fa-solid fa-download"></i></a>
+                            <a class="btn-delete" href="delete.php?id=<?= $d['id'] ?>&kategori=<?= $kategori ?>"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
                 <?php } ?>
@@ -96,6 +111,37 @@ ORDER BY created_at DESC");
         </div>
 
     </div>
+    <script>
+        function cariFile() {
+
+    let input = document.getElementById("search").value.toLowerCase();
+    let table = document.getElementById("tableArsip");
+    let tr = table.getElementsByTagName("tr");
+
+    for (let i = 1; i < tr.length; i++) {
+
+        let tdTanggal = tr[i].getElementsByTagName("td")[1];
+        let tdNama = tr[i].getElementsByTagName("td")[2];
+
+        if (tdTanggal || tdNama) {
+
+            let txtTanggal = tdTanggal.textContent.toLowerCase();
+            let txtNama = tdNama.textContent.toLowerCase();
+
+            if (txtTanggal.includes(input) || txtNama.includes(input)) {
+
+                tr[i].style.display = "";
+
+            } else {
+
+                tr[i].style.display = "none";
+
+            }
+
+        }
+    }
+}
+    </script>
 </body>
 
 </html>
