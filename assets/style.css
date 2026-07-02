@@ -33,7 +33,7 @@ nav h2 {
     font-weight: 900;
     color: white;
     text-decoration: none;
-    padding: 8px 0;
+    padding: 8px ;
 }
 
 .sidebar a:hover {
@@ -54,29 +54,37 @@ nav h2 {
     margin-top: 50px;
     text-align: center;
 }
-
-.deskripsi {
-    background: #0ea5e9;
-    padding: 10px;
-    margin-bottom: 10px;
-    margin-top: 60px;
-    width: 380px;
+.deskripsi{
+    background-color: #dbeafe;
     border-radius: 20px;
+    margin-top: 60px;
+    padding:10px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
-.deskripsi h1 {
-    font-size: 20px;
-    font-weight: 800;
-}
-
 .deskripsi h3 {
-    font-size: 18px;
-    font-weight: 900;
+    background:#5801fa;
+    color:white;
+    display:inline-block;
+    padding:10px 20px;
+    border-radius:20px;
+    margin: 20px;
+    font-weight:bold;
 }
+.deskripsi h1 {
+    font-size:50px;
+    line-height:1.3;
+    color:#0f2d5c;
+    margin-bottom:20px;
+    max-width:900px;
+}
+
 
 .deskripsi p {
-    font-size: 15px;
-    font-weight: 600;
+    font-size:20px;
+    color:#555;
+    line-height:1.8;
+    max-width:800px;
 }
 
 .card-box {
@@ -84,37 +92,51 @@ nav h2 {
     flex-wrap: wrap;
     gap: 20px;
     margin-bottom: 10px;
+    
 }
 
 .total-dokumen {
-    background: #0ea5e9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0213d6;
     color: white;
-    width: 360px;
+    width: 380px;
     text-align: center;
-    border-radius: 10px;
-}
-
-.total-download {
-    background: #22c55e;
-    color: white;
-    width: 360px;
-    text-align: center;
-    border-radius: 10px;
-}
-
-.stat-card {
-    background: #3a04ec;
-    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: auto;
+}
+.dok h4{
+    margin: 20px 10px;
+    font-size: 30px;
+}
+.dok h2{
+    font-size: 30px;
+}
+.logo i{
+    margin: 10px 20px;
+    font-weight: 500;
+    font-size: 80px; 
+}
+.total-download {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #6b04e9;
+    color: white;
+    width: 380px;
     text-align: center;
-    transition: 0.4s;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+canvas{
+     margin-top: 5px;
+     border-radius: 20px;
+     padding: 5px;
+     background:white;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.stat-card:hover {
-    transform: scale(1.0) translateY(-5px);
-}
 
 .form-box {
     background: #fff;
@@ -139,6 +161,7 @@ nav h2 {
     padding: 8px 15px;
     border-radius: 4px;
     cursor: pointer;
+    margin-bottom: 20px;
 }
 
 .btn-back {
@@ -174,21 +197,12 @@ table td {
     border-bottom: 1px solid #ddd;
 }
 
-.btn-edit {
-    background: #16a34a;
-    color: #fff;
-    padding: 5px 5px;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-}
-
 .btn-delete {
     background: #dc2626;
     color: #fff;
     padding: 5px 5px;
     border-radius: 4px;
-    text-decoration: none;
+   
 }
 
 .btn-download {
